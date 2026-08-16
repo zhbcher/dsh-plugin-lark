@@ -1,0 +1,13 @@
+# Node
+node_modules/
+
+# 日志与状态
+*.log
+lark_bridge.pid
+.dsh/
+
+# macOS
+.DS_Store
+
+# 本地状态目录
+.lark-connector/

@@ -1,0 +1,22 @@
+{
+  "name": "dsh-plugin-lark",
+  "version": "0.1.0",
+  "description": "飞书接入插件（薄架构）：Web 面板扫码授权 lark-cli + 管理飞书网关监听器，业务收发仍在独立 lark-bridge 进程",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT"
+}
