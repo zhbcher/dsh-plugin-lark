@@ -2,7 +2,7 @@
   "name": "dsh-plugin-lark",
   "version": "0.1.0",
   "description": "飞书接入插件（薄架构）：Web 面板扫码授权 lark-cli + 管理飞书网关监听器，业务收发仍在独立 lark-bridge 进程",
-  "private": true,
+  "private": false,
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -18,5 +18,30 @@
       "platform": "web"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "lib",
+    "bridge",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhbcher/dsh-plugin-lark.git"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "feishu",
+    "lark",
+    "bot",
+    "扫码"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node test/harness.mjs"
+  }
 }

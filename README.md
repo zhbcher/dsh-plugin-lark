@@ -7,10 +7,29 @@
 
 1. **新建飞书机器人（推荐）**：面板点「新建机器人」→ 手机扫码登录开放平台 →
    工具自动完成 创建应用 → 开机器人能力 → 导入权限 → 订阅消息事件 → 发布版本 →
-   约 30-60 秒拿到新机器人凭证并自动写入 lark-cli → 自动衔接「扫码授权」。
+   约 30-60 秒拿到新机器人凭证并自动写入 lark-cli → **自动启动监听器** → 直接可用（一次扫码即连接）。
    底层用 [feishu-bot-bootstrap](https://www.npmjs.com/package/feishu-bot-bootstrap)（headless + events-jsonl 事件流）。
-2. **扫码授权**：对当前 lark-cli 应用完成用户身份授权（lark-cli 设备流）。
+2. **用户身份授权（可选）**：需要以个人身份访问日历/文档/邮件等资源时再扫码授权（lark-cli 设备流）。
 
+## 安装（npm）
+
+```bash
+npm install -g dsh-plugin-lark   # 或按 dsh 插件方式
+dsh plugin --profile web add dsh-plugin-lark
+```
+
+依赖：`lark-cli`（PATH 中可用）、`dsh`、Chrome/Edge（扫码新建机器人用）、飞书开放平台账号。
+
+环境变量（均可覆盖，默认已通用化）：
+
+| 变量 | 默认 | 说明 |
+|---|---|---|
+| `LARK_BRIDGE_DIR` | `~/.dsh/lark-bridge` | 网关目录（内含 `lark_bridge.py` + `manage_lark_bridge.sh`，随包自带） |
+| `DSH_WORK_DIR` | `~` | 任务工作目录（网关侧） |
+| `LARK_CLI_BIN` | `lark-cli`(PATH) | lark-cli 路径 |
+| `LARK_BOT_NAME` | `DeepSeek Harness 助手` | 新建机器人的应用名 |
+
+---
 ## 架构（薄插件设计）
 
 ```
