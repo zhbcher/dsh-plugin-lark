@@ -1,0 +1,10 @@
+# 开发/测试文件不进 npm 包（files 字段已限定，此处双保险）
+test/
+covers/
+renders/
+restart-web.sh
+*.log
+lark_bridge.pid
+.DS_Store
+.git/
+.env
